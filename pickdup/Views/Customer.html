@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title></title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <!--<form method="post"  style="margin-top: 100px">-->
+    <div class="container-fluid" style="margin-top: 100px">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="card ">
+                    <div class="card-header bg-primary" style="color: white">
+                        <div class="card-title" id="CreateCustomerFormCardTittle"> Customer Form </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="from-group row">
+                            <label class="col-md-4" for="Name">Name*</label>
+                            <div class="col-md-8">
+                                <input type="text" id="Name" name="Name" class="form-control" />
+                                <span id="NameSpan" style="display: none" class="text-danger">Name Required </span>
+                            </div>
+                        </div>
+
+                        <div class="from-group row">
+                            <label class="col-md-4" for="Email">Email*</label>
+                            <div class="col-md-8">
+                                <input type="text" id="Email" name="Email" class="form-control" />
+                                <span id="EmailSpan" style="display: none" class="text-danger">Email Required </span>
+                            </div>
+                        </div>
+
+                        <div class="from-group row">
+                            <label class="col-md-4" for="ContactNo">ContactNo*</label>
+                            <div class="col-md-8">
+                                <input type="text" id="ContactNo" name="ContactNo" class="form-control" />
+                                <span id="ContactNoSpan" style="display: none" class="text-danger">ContactNo Required </span>
+                            </div>
+                        </div>
+
+                        <div class="from-group row">
+                            <label class="col-md-4" for="AdressTypeId">AdressType *</label>
+                            <div class="col-md-8">
+                                <select id="AdressTypeId" name="AdressTypeId" class="form-control">
+                                     <option>-----Select Adress-----</option>
+                                    <option value="1">Present Adress</option>
+                                    <option value="2">Permanent Adress</option>
+                                </select>
+                                <span id="AdressTypeIdSpan" style="display: none" class="text-danger">AdressType Required </span>
+                            </div>
+                        </div>
+
+                        <div id="AdressDiv" class="from-group row" style="visibility : hidden">
+                            <label id="AdressLabel" class="col-md-4" for="Adress"></label>
+                            <div class="col-md-8">
+                                <input type="text" id="Adress" name="Adress" class="form-control" />
+                                <span id="AdressSpan" style="display: none" class="text-danger">Adress Required </span>
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div align="right">
+                            <button id="SubmitButton" class="btn btn-outline-success" type="button">Submit</button>
+                            <button id="ClearButton" class="btn btn-outline-danger" type="button">Clear</button>
+
+                        </div>
+                        <hr />
+
+                        <!--<div class="card-footer">
+                        <div align="right">
+                        <button id="SubmitButton" class="btn btn-outline-success" type="submit">Save</button>
+                        <button class="btn btn-outline-danger" type="submit">Clear</button>
+                        </div>
+
+                        </div>-->
+
+                        <div id="CustomerTableDiv">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Sl.</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Contact No</th>
+                                            <th>Adress Type</th>
+                                            <th>Adress</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="CustomerTBody">
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card ">
+                    <div class="card-header bg-info" style="color: white">
+                        <div class="card-title"> Search Form </div>
+                    </div>
+
+                    <div class="card-body">
+
+
+                        <div class="from-group row">
+                            <label class="col-md-4" for="SearchName">Name</label>
+                            <div class="col-md-8">
+                                <input type="text" id="SearchName" name="SearchName" class="form-control" />
+
+                            </div>
+                        </div>
+                        <br />
+                        <div class="from-group row">
+                            <label class="col-md-4" for="SearchEmail">Email</label>
+                            <div class="col-md-8">
+                                <input type="text" id="SearchEmail" name="SearchEmail" class="form-control" />
+
+                            </div>
+                        </div>
+                        <!--<br />
+                        <div class="from-group row">
+                            <label clas s="col-md-4" for="ContactNo">ContactNo *</label>
+                            <div class="col-md-8">
+                                <input type="text" id="ContactNo" name="ContactNo" class="form-control" />
+                                <span id="ContactNoSpan" style="display: none" class="text-danger">ContactNo Required </span>
+                            </div>
+                        </div>
+                        <div class="from-group row">
+                            <label class="col-md-4" for="AdressTypeId">AdressType *</label>
+                            <div class="col-md-8">
+                                <select id="AdressTypeId" name="AdressTypeId" class="form-control">
+                                    <option>-----Select Adress-----</option>
+                                    <option value="1">Present Adress</option>
+                                    <option value="2">Permanent Adress</option>
+                                </select>
+                                <span id="AdressTypeIdSpan" style="display: none" class="text-danger">AdressType Required </span>
+                            </div>
+                        </div>
+
+                        <div id="AdressDiv" class="from-group row" style="visibility : hidden">
+                            <label id="AdressLabel" class="col-md-4" for="Adress"></label>
+                            <div class="col-md-8">
+                                <input type="text" id="Adress" name="Adress" class="form-control" />
+                                <span id="AdressSpan" style="display: none" class="text-danger">Adress Required </span>
+                            </div>
+                        </div>-->
+
+                        <hr />
+                        <div align="right">
+                            <button id="SearchButton" class="btn btn-outline-info" type="button">Search</button>
+                            <button id="SearchClearButton" class="btn btn-outline-danger" type="button">Clear</button>
+
+                        </div>
+                        <hr />
+
+                        <!--<div class="card-footer">
+                        <div align="right">
+                        <button id="SubmitButton" class="btn btn-outline-success" type="submit">Save</button>
+                        <button class="btn btn-outline-danger" type="submit">Clear</button>
+                        </div>
+
+                        </div>-->
+
+                        <div id="CustomerSearchTableDiv">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Sl.</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Contact No</th>
+                                            <th>Adress Type</th>
+                                            <th>Adress</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="CustomerSearchTBody">
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!--nabid--><!--nabid-->
+    <!--</form>-->
+
+
+    <script src="../Scripts/jquery-3.5.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+    <script src="../Scripts/Project/Models/Customer.js"></script>
+    <script src="../Scripts/Project/Context/DbContext.js"></script>
+    <script src="../Scripts/Project/Customer/CustomerCreate.js"></script>
+
+
+
+</body>
+</html> 
